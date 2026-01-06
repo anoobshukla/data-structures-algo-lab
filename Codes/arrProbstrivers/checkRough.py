@@ -33,3 +33,23 @@ rohan = Solution("Rahul",28,9)
 
 
 print(rohan.printDetails())
+
+import random
+
+# Step 1: Generate 100 even numbers
+even_numbers = [x for x in range(201) if x%2 ==0]
+print("evenNumbers",even_numbers)
+
+# Step 2: Shuffle using Fisher–Yates
+def shuffle(arr):
+    n = len(arr)
+    for i in range(n - 1, 0, -1):
+        print("i", i)
+        j = random.randint(0, i)
+        print("i and j",i,j)
+        print("arr[i] and arr[j]", arr[i], arr[j])
+        arr[i], arr[j] = arr[j], arr[i]
+
+shuffle(even_numbers)
+
+print(even_numbers)

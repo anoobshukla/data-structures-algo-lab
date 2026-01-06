@@ -261,3 +261,25 @@ print(longestOnesBrute(nums,2))
 #     return arr2
 #     # for i in arr2:
 # print(maxbinArr(nums,k))
+
+
+import random
+
+# Step 1: Generate 100 even numbers
+even_numbers = []
+num = 2
+
+for _ in range(100):
+    even_numbers.append(num)
+    num += 2
+
+# Step 2: Shuffle using Fisher–Yates
+def shuffle(arr):
+    n = len(arr)
+    for i in range(n - 1, 0, -1):
+        j = random.randint(0, i)
+        arr[i], arr[j] = arr[j], arr[i]
+
+shuffle(even_numbers)
+
+print(even_numbers)
